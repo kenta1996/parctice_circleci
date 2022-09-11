@@ -1,23 +1,9 @@
-version: 2.1
-executors:
-  my-executor:
-    docker:
-      - image: cimg/ruby:2.7.1-node
+version: 2
 jobs:
   build:
-    executor: my-executor
+    docker:
+      - image: cimg/node:lts
     steps:
-      - run: echo Hello World
-
-# 複数ジョブの同時実行
-workflows:
-  version: 2
-  workflow:
-    jobs:
-      - install_deps
-      - test_a:
-        requires:
-          - install_deps
-      - test_b:
-        requires:
-          - install_deps
+      - checkout
+      - run: yarn install
+      - run: yarn test
