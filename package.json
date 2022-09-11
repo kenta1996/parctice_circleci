@@ -3,7 +3,8 @@
   "author": "tomoya <tomoya.ton@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test": "TZ='Asia/Tokyo' jest"
   },
   "devDependencies": {
     "jest": "26.1.0"
